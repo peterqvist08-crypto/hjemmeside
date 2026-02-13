@@ -10,10 +10,10 @@
     <main class="container">
       <header>
         <p class="eyebrow">Detailing-forretning</p>
-        <h1>Find de rigtige produkter til hver bil</h1>
+        <h1>Interaktiv produktvælger til bilrengøring</h1>
         <p>
-          Vælg bilens mærke og model eller indtast nummerplade. Systemet matcher materialer i bilen
-          og foreslår produkter til både udvendig og indvendig rengøring.
+          Indtast nummerplade eller vælg mærke/model. Du kan bagefter tilpasse materialer, så
+          anbefalingerne passer til den konkrete bil.
         </p>
       </header>
 
@@ -21,6 +21,18 @@
         <h2>Biloplysninger</h2>
         <form id="car-form">
           <div class="field-grid">
+            <label>
+              Nummerplade
+              <input
+                id="plate"
+                name="plate"
+                type="text"
+                placeholder="Fx AB12345"
+                maxlength="8"
+                autocomplete="off"
+              />
+            </label>
+
             <label>
               Mærke
               <select id="brand" name="brand">
@@ -34,18 +46,6 @@
                 <option value="">Vælg model</option>
               </select>
             </label>
-
-            <label>
-              Nummerplade
-              <input
-                id="plate"
-                name="plate"
-                type="text"
-                placeholder="Fx AB12345"
-                maxlength="8"
-                autocomplete="off"
-              />
-            </label>
           </div>
 
           <div class="actions">
@@ -53,7 +53,49 @@
             <button type="button" id="clear" class="secondary">Nulstil</button>
           </div>
         </form>
-        <p class="hint">Tip: Nummerpladen forsøger først at finde bilens materialedata.</p>
+
+        <p id="lookup-status" class="hint"></p>
+      </section>
+
+      <section class="card" id="material-editor" hidden>
+        <h2>Tilpas materialer</h2>
+        <p>Ret materialer efter den faktiske bil, så får du mere præcise forslag.</p>
+
+        <div class="field-grid">
+          <label>
+            Sæder
+            <select id="seat-material"></select>
+          </label>
+
+          <label>
+            Dashboard
+            <select id="dashboard-material"></select>
+          </label>
+
+          <label>
+            Dørpaneler
+            <select id="door-material"></select>
+          </label>
+
+          <label>
+            Gulv/måtter
+            <select id="floor-material"></select>
+          </label>
+
+          <label>
+            Laktype
+            <select id="paint-type"></select>
+          </label>
+
+          <label>
+            Fælge
+            <select id="wheel-finish"></select>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button type="button" id="update-recommendations">Opdater anbefalinger</button>
+        </div>
       </section>
 
       <section class="card" id="results" hidden>
