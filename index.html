@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billede &amp; Video Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <h1>Billede &amp; Video Generator</h1>
+  <p class="lead">Skriv hvad du vil se, og få et AI-genereret billede eller video. Gratis, ingen download nødvendig.</p>
+
+  <section class="card" id="key-card">
+    <h2>1. Gratis nøgle (kun én gang)</h2>
+    <p>
+      Værktøjet bruger <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations.ai</a>,
+      som er gratis, men kræver en gratis nøgle (intet kreditkort).
+      <a href="https://enter.pollinations.ai" target="_blank" rel="noopener">Få din gratis nøgle her</a>,
+      kopier den, og indsæt den nedenfor. Den gemmes kun i din browser.
+    </p>
+    <div class="row">
+      <input type="password" id="apiKey" placeholder="Indsæt din nøgle (pk_...)" autocomplete="off">
+      <button id="saveKey">Gem nøgle</button>
+    </div>
+    <p class="hint" id="keyStatus">Ingen nøgle gemt endnu.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Billede</h2>
+    <textarea id="imagePrompt" rows="2" placeholder="Fx: en rød ræv i en skov ved solnedgang"></textarea>
+    <div class="row">
+      <button id="genImage">Generér billede</button>
+    </div>
+    <div class="output" id="imageOutput"></div>
+  </section>
+
+  <section class="card">
+    <h2>3. Video</h2>
+    <textarea id="videoPrompt" rows="2" placeholder="Fx: bølger der ruller ind over en strand"></textarea>
+    <div class="row">
+      <button id="genVideo">Generér video</button>
+    </div>
+    <p class="hint">Video tager længere tid end billeder (ofte 30-90 sekunder).</p>
+    <div class="output" id="videoOutput"></div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
