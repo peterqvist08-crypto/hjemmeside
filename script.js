@@ -101,7 +101,7 @@ async function generateMedia({ prompt, kind, url, button, container, mediaTag, f
 document.getElementById("genImage").addEventListener("click", () => {
   const prompt = document.getElementById("imagePrompt").value;
   const url =
-    API_BASE + "/image/" + encodeURIComponent(prompt) + "?model=zimage&width=1024&height=1024";
+    API_BASE + "/image/" + encodeURIComponent(prompt) + "?model=flux&width=1024&height=1024";
   generateMedia({
     prompt,
     kind: "billede",
